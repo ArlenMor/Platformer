@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -11,14 +9,14 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField, Range(100, 500)] private float _speed = 300f;
 
-    private CharacterController _controller;
+    private PlayerController _controller;
 
     private float horizontalMove = 0f;
     private bool jump = false;
 
     private void Awake()
     {
-        _controller = GetComponent<CharacterController>();
+        _controller = GetComponent<PlayerController>();
     }
 
     private void Update()
