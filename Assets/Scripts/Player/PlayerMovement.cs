@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
+    private const string Speed = nameof(Speed);
+
     private const string Horizontal = nameof(Horizontal);
     private const string Jump = nameof(Jump);
 
@@ -25,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw(Horizontal) * _speed;
 
-        _animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        _animator.SetFloat(Speed, Mathf.Abs(horizontalMove));
 
         if(Input.GetButtonDown(Jump))
         {
