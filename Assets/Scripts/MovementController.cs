@@ -1,10 +1,9 @@
 using System;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+public class MovementController : MonoBehaviour
 {
-    public event Action OnGrounding;
-
     private const float GroundedRadius = .2f;
 
     [SerializeField] private float _jumpForce = 400f;
@@ -30,15 +29,8 @@ public class PlayerController : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, GroundedRadius);
 
         for(int i = 0; i < colliders.Length; i++)
-        {
             if (colliders[i].gameObject != gameObject)
-            {
                 _grounded = true;
-
-                if(wasGrounded == false)
-                    OnGrounding?.Invoke();
-            }
-        }
     }
 
     public void Move(float move, bool jump)

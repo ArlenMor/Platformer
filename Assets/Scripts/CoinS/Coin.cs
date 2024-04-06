@@ -8,9 +8,8 @@ public class Coin : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.GetComponent<Player>() != null)
+        if (collision.GetComponent<PlayerMovement>() != null)
         {
-            Debug.Log("here");
             WasColelcted?.Invoke();
             Destroy(gameObject);
         }

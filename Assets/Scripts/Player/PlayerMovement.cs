@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(MovementController))]
+[RequireComponent(typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
     private const string Horizontal = nameof(Horizontal);
@@ -9,19 +9,23 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField, Range(100, 500)] private float _speed = 300f;
 
-    private PlayerController _controller;
+    private MovementController _controller;
+    private Animator _animator;
 
     private float horizontalMove = 0f;
     private bool jump = false;
 
     private void Awake()
     {
-        _controller = GetComponent<PlayerController>();
+        _controller = GetComponent<MovementController>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         horizontalMove = Input.GetAxisRaw(Horizontal) * _speed;
+
+        _animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         if(Input.GetButtonDown(Jump))
         {
