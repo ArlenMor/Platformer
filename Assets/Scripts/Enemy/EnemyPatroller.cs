@@ -46,6 +46,11 @@ public class EnemyPatroller : MonoBehaviour
         _controller.Move(_horizontalMove * Time.deltaTime, false);
     }
 
+    public void CollisionWithPlayer()
+    {
+        //some logic
+    }
+
     private void GetDirectionToNextPoint()
     {
         if (_patrolWaypoints.Length == 0)
@@ -58,4 +63,6 @@ public class EnemyPatroller : MonoBehaviour
         _direction = (pointOnEnemyLine - transform.position).normalized;
         _hasDirection = true;
     }
+
+    
 }
