@@ -5,8 +5,9 @@ public class MedicalKit : MonoBehaviour
 {
     public event Action WasColelcted;
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void Collected()
     {
-        
+        WasColelcted?.Invoke();
+        Destroy(gameObject);
     }
 }

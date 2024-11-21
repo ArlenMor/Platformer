@@ -5,9 +5,9 @@ public class CollisionWithEnemy : MonoBehaviour
 {
     public event Action<EnemyPatroller> EventEnemyPatrollerCollision;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        string tag = collision.tag.ToLower();
+        string tag = collision.gameObject.tag.ToLower();
 
         if (tag == TagsCheck.Patroller)
         {

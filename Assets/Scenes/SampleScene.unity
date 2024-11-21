@@ -1567,6 +1567,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnDeley: 0.5
+--- !u!1001 &807584004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1870645099178978191, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
+      propertyPath: m_Name
+      value: MedicalKit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905983431340824044, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905983431340824044, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905983431340824044, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905983431340824044, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905983431340824044, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905983431340824044, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905983431340824044, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905983431340824044, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905983431340824044, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905983431340824044, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 568c3ec9e5e462443ad0c58cede3fb87, type: 3}
 --- !u!1 &938140108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2353,12 +2410,13 @@ GameObject:
   - component: {fileID: 1366450925}
   - component: {fileID: 1366450923}
   - component: {fileID: 1366450927}
+  - component: {fileID: 1366450931}
   - component: {fileID: 1366450930}
   - component: {fileID: 1366450928}
   - component: {fileID: 1366450929}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2577,6 +2635,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6ba836569d6d294a820f5d39eed1ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1366450931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366450918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2c2c43746fc474487e48697ca3e103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1437567301
@@ -12510,7 +12580,7 @@ GameObject:
   - component: {fileID: 1679773903804188674}
   m_Layer: 0
   m_Name: EnemyPatroller
-  m_TagString: Untagged
+  m_TagString: Patroller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12527,11 +12597,12 @@ GameObject:
   - component: {fileID: 5883927719528869851}
   - component: {fileID: 7259515976254885317}
   - component: {fileID: 6978984242391778665}
+  - component: {fileID: 8363591153217930331}
   - component: {fileID: 8363591153217930330}
   - component: {fileID: 1679773903154886869}
   m_Layer: 0
   m_Name: EnemyPatroller (1)
-  m_TagString: Untagged
+  m_TagString: Patroller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12788,6 +12859,19 @@ MonoBehaviour:
   _jumpForce: 150
   _movementSmoothing: 0.05
   _groundCheck: {fileID: 243707377104310999}
+--- !u!114 &8363591153217930331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4828928284880296439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad6636b54013d647931eb9fb52d6207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackRange: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -12800,3 +12884,4 @@ SceneRoots:
   - {fileID: 1312565476}
   - {fileID: 2483292064997260569}
   - {fileID: 1782909736}
+  - {fileID: 807584004}

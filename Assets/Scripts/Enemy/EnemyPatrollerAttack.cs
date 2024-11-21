@@ -19,9 +19,9 @@ public class EnemyPatrollerAttack : MonoBehaviour
     {
         _hit = Physics2D.Raycast(transform.position, transform.forward * _attackRange);
 
-        if(_hit.collider != null)
+        if(_hit.collider != null && _hit.rigidbody.gameObject.tag == TagsCheck.Player)
         {
-
+            Debug.Log("Вижу игрока");
         }
     }
 

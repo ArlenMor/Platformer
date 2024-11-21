@@ -12,7 +12,7 @@ public class PlayerCollision : MonoBehaviour
         _collisionWithEntity = GetComponent<CollisionWithEntity>();
         _playerHealth = GetComponent<PlayerHealth>();
 
-        //_collisionWithEnemy.EventEnemyPatrollerCollision += OnCollisionWithEnemyPatroller;
+        _collisionWithEnemy.EventEnemyPatrollerCollision += OnCollisionWithEnemyPatroller;
 
         _collisionWithEntity.EventCoinCollision += OnCollisionWithCoin;
         _collisionWithEntity.EventMedicalKitCollision += OnCollisionWithMedicalKit;
@@ -23,6 +23,8 @@ public class PlayerCollision : MonoBehaviour
         patroller.CollisionWithPlayer();
 
         _playerHealth.ReduceHealth();
+
+        Debug.Log("Столкнулся с врагом. -1HP");
     }
 
     private void OnCollisionWithCoin(Coin coin)
@@ -33,6 +35,8 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionWithMedicalKit(MedicalKit medicalKit)
     {
-
+        medicalKit.Collected();
+        _playerHealth.IncreaseHealth();
+        Debug.Log("Собрал аптечку. +1 HP");
     }
 }

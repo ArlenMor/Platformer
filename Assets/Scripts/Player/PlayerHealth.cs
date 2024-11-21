@@ -3,31 +3,28 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public event System.Action EventDie;
+    private Health _health;
 
     [SerializeField, Range(1, 3)] private int _maxHealth;
 
-    private int _currentHealth;
-
     private void Awake()
     {
-        _currentHealth = _maxHealth;
+        _health = new Health(_maxHealth);
+
+        _health.EventDie += OnDie;
     }
 
     public void ReduceHealth()
     {
-        _currentHealth--;
-
-        if(_currentHealth <= 0)
-            Die();
+        _health.ReduceHealth();
     }
 
     public void IncreaseHealth()
     {
-        _currentHealth++;
+        _health.IncreaseHealth();
     }
 
-    private void Die()
+    private void OnDie()
     {
         gameObject.SetActive(false);
     }
