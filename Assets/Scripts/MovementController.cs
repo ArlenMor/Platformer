@@ -50,6 +50,14 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    public Vector2 GetFaceDirection()
+    {
+        if (_facingLeft) return new Vector2(-1f, 0f);
+
+        return new Vector2(1f, 0f);
+
+    }
+
     private void Flip()
     {
         _facingLeft = !_facingLeft;

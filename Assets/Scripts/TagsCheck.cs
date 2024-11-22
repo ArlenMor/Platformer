@@ -1,7 +1,7 @@
 public static class TagsCheck
 {
-    public static string Player = "player";
-    public static string Patroller = "patroller";
-    public static string Coin = "coin";
-    public static string MedicalKit = "medicalkit";
+    public static string Player = "Player";
+    public static string Patroller = "Patroller";
+    public static string Coin = "Coin";
+    public static string MedicalKit = "MedicalKit";
 }

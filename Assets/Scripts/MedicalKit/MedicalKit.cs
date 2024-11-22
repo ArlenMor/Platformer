@@ -3,11 +3,17 @@ using UnityEngine;
 
 public class MedicalKit : MonoBehaviour
 {
-    public event Action WasColelcted;
+    public event Action WasCollected;
 
-    public void Collected()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        WasColelcted?.Invoke();
-        Destroy(gameObject);
+        PlayerMovement playerMovement;
+        collision.TryGetComponent<PlayerMovement>(out playerMovement);
+
+        if (playerMovement != null)
+        {
+            WasCollected?.Invoke();
+            Destroy(gameObject);
+        }
     }
 }
