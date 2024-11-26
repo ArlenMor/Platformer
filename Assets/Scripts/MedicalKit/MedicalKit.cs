@@ -7,13 +7,15 @@ public class MedicalKit : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerMovement playerMovement;
-        collision.TryGetComponent<PlayerMovement>(out playerMovement);
+        PlayerHealth playerHealth;
+        collision.TryGetComponent<PlayerHealth>(out playerHealth);
 
-        if (playerMovement != null)
+        if (playerHealth != null)
         {
             WasCollected?.Invoke();
             Destroy(gameObject);
+
+            playerHealth.IncreaseHealth();
         }
     }
 }

@@ -11,21 +11,26 @@ public class PlayerHealth : MonoBehaviour
     {
         _health = new Health(_maxHealth);
 
+        Debug.Log("HP = " + _health);
+
         _health.EventDie += OnDie;
     }
 
     public void ReduceHealth()
     {
         _health.ReduceHealth();
+        Debug.Log("-1 HP!");
     }
 
     public void IncreaseHealth()
     {
         _health.IncreaseHealth();
+        Debug.Log("+1 HP!");
     }
 
     private void OnDie()
     {
         gameObject.SetActive(false);
+        Debug.Log("Dead!!!");
     }
 }

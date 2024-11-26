@@ -43,12 +43,17 @@ public class EnemyPatroller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _controller.Move(_horizontalMove * Time.deltaTime, false);
+        _controller.Move(_horizontalMove * Time.fixedDeltaTime, false);
     }
 
-    public void CollisionWithPlayer()
+    private void OnEnable()
     {
-        //some logic
+        GetDirectionToNextPoint();
+    }
+
+    public float GetSpeed()
+    {
+        return _speed;
     }
 
     private void GetDirectionToNextPoint()
@@ -63,6 +68,4 @@ public class EnemyPatroller : MonoBehaviour
         _direction = (pointOnEnemyLine - transform.position).normalized;
         _hasDirection = true;
     }
-
-    
 }

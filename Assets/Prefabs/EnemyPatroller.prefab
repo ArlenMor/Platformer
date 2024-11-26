@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 243707375777234359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,9 +43,10 @@ GameObject:
   - component: {fileID: 5883927720856797371}
   - component: {fileID: 7259515974928032421}
   - component: {fileID: 6978984243248917001}
+  - component: {fileID: 7541222317131272098}
   - component: {fileID: 8363591151857331002}
   - component: {fileID: 1679773904013186997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyPatroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 675c4c4f14f6ac64480c5011386c50f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 890e083d1609fb54eb63bae451f31350, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,18 +153,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0020179749, y: 0.0040359497}
+  m_Offset: {x: 0, y: -0.06041515}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3333334, y: 1.3333334}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.24, y: 0.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9579897, y: 0.95395374}
+  m_Size: {x: 1.0036181, y: 0.8858588}
   m_EdgeRadius: 0
 --- !u!114 &6978984243248917001
 MonoBehaviour:
@@ -179,7 +180,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _patrolWaypointsHolder: {fileID: 0}
   _speed: 150
-  _controller: {fileID: 8363591151857331002}
+--- !u!114 &7541222317131272098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4828928285667341975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad6636b54013d647931eb9fb52d6207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackRange: 5
+  _speedMultiplier: 1.25
 --- !u!114 &8363591151857331002
 MonoBehaviour:
   m_ObjectHideFlags: 0
